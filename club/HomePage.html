@@ -1,0 +1,110 @@
+<!-- 建第3个表，txt, wnmp, t网页 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>社团管理系统</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  .hoverable{
+    display:inline-block;
+    backface-visibility: hidden;
+    vertical-align: middle;
+    position:relative;
+    box-shadow: 0 0 1px rgba(0,0,0,0);
+    tranform: translateZ(0);
+    transition-duration: .3s;
+    transition-property:transform;
+  }
+
+  .hoverable:before{
+    position:absolute;
+    pointer-events: none;
+    z-index:-1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height:10px;
+    width:90%;
+    opacity:0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+    /* W3C */
+    transition-duration: 0.3s;
+    transition-property: transform, opacity;
+  }
+
+  .hoverable:hover, .hoverable:active, .hoverable:focus{
+    transform: translateY(-5px);
+  }
+  .hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before{
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  </style>
+</head>
+<body>
+
+<div class="navbar" style="background-color: #706c61;">
+    <div style="width:300px; margin:0 auto;">
+        <ul class="nav navbar-expand-sm ">
+            <li class="hoverable" >
+              <a class="nav-link" href="./s_infoDisplay.php" style="color: #f7c5a8">社团</a>
+            </li>
+            <li class="hoverable">
+              <a class="nav-link" href="./s_main_acti.php" style="color: #f7c5a8;">活动</a>
+            </li>
+            <li class="hoverable">
+              <a class="nav-link" href="./index.php" style="color: #f7c5a8;">登录</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="demo" class="carousel slide" data-ride="carousel" >
+ 
+  <!-- 指示符 -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+ 
+  <!-- 轮播图片 -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/fig1.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/fig2.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/fig3.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/fig4.jpg">
+    </div>
+  </div>
+ 
+  <!-- 左右切换按钮 -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+ 
+</div>
+
+</body>
+</html>

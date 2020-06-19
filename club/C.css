@@ -1,0 +1,251 @@
+@CHARSET "UTF-8";
+body
+{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background:url(https://i.loli.net/2020/05/10/WgX2Y3xEc9FwdCQ.jpg);
+	background-attachment:fixed;
+    background-repeat: no-repeat
+
+);
+
+
+    background-size:100% 100%;
+    #background-size:640px 438px;
+
+}
+
+.box
+{
+    position:absolute;
+    top:15%;
+    left:35%;
+    transform:tranlate(-50%,-50%);
+    width:400px;
+    padding:40px;
+    background:rgba(0,0,0,.2);
+    box-sizing:border-box;
+    box-shadow:0 15px 25px rgba(0,0,0,.5);
+    border-radius:10px;
+}
+.box h2
+{
+    margin:0 0 30px;
+    padding:0;
+    color:#fff;
+    text-align:center;
+}
+
+*.box h3
+{
+    margin:0 0 30px;
+    padding:0;
+    color:#2DB1C1;
+    text-align:center;
+}
+
+.box h4
+{   
+    position:absolute;
+	left:320px;
+	top:430px;
+    margin:0 0 30px;
+    padding:0;
+    color:#C3B0D6;
+}
+
+.box .inputButton
+{
+
+    width:100%;
+    padding:10px 0;
+    font-size:15px;
+    color:#fff;
+    letter-spacing:3px;
+    margin-bottom:30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline:none;
+    background:transparent;
+}
+
+.box .inputBox
+{
+    position:relative;
+}
+.box .inputBOx input
+{
+    width:100%;
+    padding:10px 0;
+    font-size:15px;
+    color:#fff;
+    letter-spacing:3px;
+    margin-bottom:30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline:none;
+    background:transparent;
+}
+
+
+.box .inputBox label
+{
+    position:absolute;
+    top:0;
+    left:0;
+    letter-spacing:1px;
+    padding:10px 0;
+    font-size:16px;
+    color:#fff;
+    pointer-events:none;
+    transition:.5s;
+}
+.box .inputBox input:focus~label,
+.box .inputBox input:valid~label
+{
+    top:-18px;
+    left:0;
+    color:#2DB1C1;
+    font-size:12px;
+}
+
+.box .container1 input
+{
+    background:transparent;
+    border:none;
+    outline:none;
+    color:#fff;
+    background:#293844;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+	position: relative;
+    transition: 0.5s;
+
+}
+
+.box .container1 input
+{
+    position:absolute;
+	left:25px;
+	top:450px;
+	background:transparent;
+    border:none;
+    color:#fff;
+    background:#293844;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+
+}
+
+.box .container2 input
+{
+    position:absolute;
+	left:225px;
+	top:450px;
+	background:transparent;
+    border:none;
+    color:#000;
+    background:#e7e7e7;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+}
+
+.box .container3 input
+{
+    position:absolute;
+	left:235px;
+	top:380px;
+	background:transparent;
+    border:none;
+    color:#000;
+    background:#e7e7e7;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+}
+
+.box .container4 input
+{
+    position:absolute;
+	left:25px;
+	top:380px;
+	background:transparent;
+    border:none;
+    color:#fff;
+    background:#293844;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+}
+
+.box .button {
+	
+  position:absolute;
+  right:1px;
+  top:1px;
+  display: inline-block;
+  border-radius: 5px;
+  background:rgba(0,0,0,0);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 45px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.box .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.box .button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.box .button:hover span {
+  padding-right: 25px;
+}
+
+.box .button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
