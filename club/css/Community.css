@@ -1,0 +1,181 @@
+@CHARSET "UTF-8";
+body
+{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background:url(http://5b0988e595225.cdn.sohucs.com/images/20170917/7b58b1faff68475bad6e39287755648d.jpeg);
+    background-size:1280px 850px;
+    background-repeat: repeat;
+
+}
+
+.box
+{
+    position:relative;
+    top:15%;
+    left:25%;
+    transform:tranlate(-50%,-50%);
+    width:800px;
+    height:500px;
+    padding:40px;
+    background:rgba(0,0,0,.3);
+    box-sizing:border-box;
+    box-shadow:0 15px 25px rgba(0,0,0,.5);
+    border-radius:10px;
+}
+.box h2
+{
+    margin:0 0 30px;
+    padding:0;
+    color:#fff;
+    text-align:center;
+}
+
+.box h3
+{
+    margin:0 0 30px;
+    padding:0;
+    color:#C3B0D6;
+    text-align:center;
+}
+
+.box h4
+{
+    margin:0 0 30px;
+    padding:0;
+    color:#C3B0D6;
+    text-align:center;
+}
+
+.box .inputButton
+{
+
+    width:100%;
+    padding:10px 0;
+    font-size:15px;
+    color:#fff;
+    letter-spacing:3px;
+    margin-bottom:30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline:none;
+    background:transparent;
+}
+
+.box .inputBox
+{
+    position:relative;
+}
+.box .inputBOx input
+{
+    width:100%;
+    padding:10px 0;
+    font-size:15px;
+    color:#fff;
+    letter-spacing:3px;
+    margin-bottom:30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline:none;
+    background:transparent;
+}
+
+
+.box .inputBox label
+{
+    position:absolute;
+    top:0;
+    left:0;
+    letter-spacing:1px;
+    padding:10px 0;
+    font-size:16px;
+    color:#fff;
+    pointer-events:none;
+}
+.box .inputBox input:focus~label,
+.box .inputBox input:valid~label
+{
+    top:-18px;
+    left:0;
+    color:#f46d90;
+    font-size:12px;
+}
+
+.box .container1 input
+{
+    background:transparent;
+    border:none;
+    outline:none;
+    color:#fff;
+    background:#293844;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+	position: relative;
+    transition: 0.5s;
+
+}
+
+.box .container1 input
+{
+    position:absolute;
+	left:25px;
+	top:380px;
+	background:transparent;
+    border:none;
+    color:#fff;
+    background:#293844;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+
+}
+
+.box .container2 input
+{
+    position:absolute;
+	left:225px;
+	top:380px;
+	background:transparent;
+    border:none;
+    color:#000;
+    background:#e7e7e7;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+}
+
+.box .container3 input
+{
+    position:absolute;
+	left:235px;
+	top:380px;
+	background:transparent;
+    border:none;
+    color:#000;
+    background:#e7e7e7;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+}
