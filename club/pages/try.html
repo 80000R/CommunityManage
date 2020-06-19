@@ -1,0 +1,112 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<link rel="stylesheet" href="../static/css/font.css">
+	<link rel="stylesheet" href="../static/css/weadmin.css">
+	<link href="../static/style.css" rel="stylesheet">
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KbrpSlFbxH0ZkNgIb9l2vlTqZxPfqxwO"></script>
+	<title>信息查询</title>
+</head>
+
+
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	
+
+	map.centerAndZoom("天津", 10);
+	
+	map.enableScrollWheelZoom(true);
+	
+	var local = new BMap.LocalSearch("天津市",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var local = new BMap.LocalSearch("北京",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var local = new BMap.LocalSearch("呼和浩特市",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var local = new BMap.LocalSearch("昆明市",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var local = new BMap.LocalSearch("西安市",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var local = new BMap.LocalSearch("上海",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var local = new BMap.LocalSearch("哈尔滨市",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var local = new BMap.LocalSearch("拉萨市",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var local = new BMap.LocalSearch("广州市",   
+            {renderOptions: {map: map,autoViewport: true},pageCapacity: 100});
+	local.search("医院");
+	
+	var removeMarker = function(e,ee,marker){
+		map.removeOverlay(marker);
+	}
+	
+	
+	//创建右击菜单
+	var menu = new BMap.ContextMenu();
+	var txtMenuItem = [
+		{
+			text:'放大',
+			callback:function(){map.zoomIn()}
+		},
+		{
+			text:'缩小',
+			callback:function(){map.zoomOut()}
+		}
+	];
+	for(var i=0; i < txtMenuItem.length; i++){
+		menu.addItem(new BMap.MenuItem(txtMenuItem[i].text,txtMenuItem[i].callback,100));
+	}
+	map.addContextMenu(menu);
+	
+	
+	//获取并显示当前位置
+	var geolocation = new BMap.Geolocation();
+	geolocation.getCurrentPosition(function(r){
+		if(this.getStatus() == BMAP_STATUS_SUCCESS){
+			var myIcon = new BMap.Icon("./sign2.png", new BMap.Size(100,100));
+			var mk = new BMap.Marker(r.point,{icon:myIcon});
+			map.addOverlay(mk);
+			map.panTo(r.point);
+			alert('您的位置：'+r.point.lng+','+r.point.lat);
+		}
+		else {
+			alert('failed'+this.getStatus());
+		}        
+	},{enableHighAccuracy: true})
+	
+	
+	
+		
+</script>

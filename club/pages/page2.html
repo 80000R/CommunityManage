@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>路线分析</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../static/css/font.css">
+		<link rel="stylesheet" href="../static/css/weadmin.css">
+		<link href="../static/style.css" rel="stylesheet">
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KbrpSlFbxH0ZkNgIb9l2vlTqZxPfqxwO"></script>
+
+	</head>
+
+	<body>
+		<div class="weadmin-body">
+			<blockquote class="layui-elem-quote">路线分析</blockquote>
+			<div class="layui-fluid" style="overflow: hidden;">
+				<div class="layui-row layui-col-space15">
+					<div class="layui-col-md12">
+						<div class="layui-card">
+							<div class="layui-card-body">
+								<div style="width: 100%; height: 600px;">
+									<div align="center">
+										<div class="layui-inline">
+											<input type="text" id="start" x="" y="" class="layui-input" placeholder="请输入起点">
+										</div>
+										<div class="layui-inline">
+											<input type="text" id="end" x="" y="" class="layui-input" placeholder="请输入终点">
+										</div>
+										<div class="layui-inline">
+											<select id="select" class="layui-select">
+												<option selected="selected" value="0">最少时间</option>
+												<option value="1">最短路程</option>
+											</select>
+										</div>
+										<button class="layui-btn" id="go" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+									</div>
+									<div align="center">
+										<div id="map" style="position:absolute;left:0px;top:30px;margin-top:30px;width:100%;height:600px;z-index: 0;"></div>
+										<div id="load" align="center" style="position:absolute;left:0px;top:30px;margin-top:30px;width:100%;height:70px;background-color: #F7F7F7;z-index: -2;">
+											<div id="ajaxloader2">
+												<div class="outer"></div>
+												<div class="inner"></div>
+												Loading
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="../lib/layui/layui.js" charset="utf-8"></script>
+	<script src="../static/jquery/jquery-3.2.0.min.js"></script>
+	<script src="../static/layer/layer.js"></script>
+	<script type="text/javascript">
+		var map = new BMap.Map("map");
+		map.centerAndZoom(new BMap.Point(117.210, 39.143), 11);
+		map.enableScrollWheelZoom(true);
+		var top_left_control = new BMap.ScaleControl({
+			anchor: BMAP_ANCHOR_TOP_LEFT
+		});
+		var top_left_navigation = new BMap.NavigationControl();
+		map.addControl(top_left_control);
+		map.addControl(top_left_navigation);
+
+
+		var ac = new BMap.Autocomplete({
+			"input": "start",
+			"location": map
+		});
+
+		ac.addEventListener("onhighlight", function(e) {
+			var str = "";
+			var _value = e.fromitem.value;
+			var value = "";
+			if (e.fromitem.index > -1) {
+				value = _value.province + _value.city + _value.district + _value.street + _value.business;
+			}
+			str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+			value = "";
+			if (e.toitem.index > -1) {
+				_value = e.toitem.value;
+				value = _value.province + _value.city + _value.district + _value.street + _value.business;
+			}
+			str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+		});
+
+
+		var myValue;
+		ac.addEventListener("onconfirm", function(e) {
+			var _value = e.item.value;
+			myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+
+			setPlace();
+		});
+
+		function setPlace() {
+			//map.clearOverlays();    
+			function myFun() {
+				var pp = local.getResults().getPoi(0).point;
+				$("#start").attr("x", pp.lng);
+				$("#start").attr("y", pp.lat);
+				console.log($("#start").attr("x"), $("#start").attr("y"));
+			}
+			var local = new BMap.LocalSearch(map, {
+				onSearchComplete: myFun
+			});
+			local.search(myValue);
+		}
+
+
+
+		var ac2 = new BMap.Autocomplete({
+			"input": "end",
+			"location": map
+		});
+
+		ac2.addEventListener("onhighlight", function(e) {
+			var str = "";
+			var _value = e.fromitem.value;
+			var value = "";
+			if (e.fromitem.index > -1) {
+				value = _value.province + _value.city + _value.district + _value.street + _value.business;
+			}
+			str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+			value = "";
+			if (e.toitem.index > -1) {
+				_value = e.toitem.value;
+				value = _value.province + _value.city + _value.district + _value.street + _value.business;
+			}
+			str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+		});
+
+
+		var myValue2;
+		ac2.addEventListener("onconfirm", function(e) {
+			var _value = e.item.value;
+			myValue2 = _value.province + _value.city + _value.district + _value.street + _value.business;
+
+			setPlace2();
+		});
+
+		function setPlace2() {
+			//map.clearOverlays();    
+			function myFun() {
+				var pp = local.getResults().getPoi(0).point;
+				$("#end").attr("x", pp.lng);
+				$("#end").attr("y", pp.lat);
+				console.log($("#end").attr("x"), $("#end").attr("y"));
+			}
+			var local = new BMap.LocalSearch(map, {
+				onSearchComplete: myFun
+			});
+			local.search(myValue2);
+		}
+
+		$("#go").click(function() {
+			var start = $("#start").val();
+			var end = $("#end").val();
+			if (start == "") {
+				layer.msg("请输入起点！");
+				return;
+			}
+			if (end == "") {
+				layer.msg("请输入终点！");
+				return;
+			}
+
+			$("#load").css("z-index", "100");
+
+			var x1 = $("#start").attr("x");
+			var y1 = $("#start").attr("y");
+			var x2 = $("#end").attr("x");
+			var y2 = $("#end").attr("y");
+			var p1 = new BMap.Point(x1, y1);
+			var p2 = new BMap.Point(x2, y2);
+
+			//var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+			//console.log(p1,p2);
+			//driving.search(p1,p2);
+
+			var routePolicy = [BMAP_DRIVING_POLICY_LEAST_TIME, BMAP_DRIVING_POLICY_LEAST_DISTANCE,
+				BMAP_DRIVING_POLICY_AVOID_HIGHWAYS
+			];
+
+			map.clearOverlays();
+			var i = $("#select").val();
+			search(p1, p2, routePolicy[i]);
+
+			function search(start, end, route) {
+				var driving = new BMap.DrivingRoute(map, {
+					renderOptions: {
+						map: map,
+						autoViewport: true
+					},
+					policy: route
+				});
+				driving.search(start, end);
+			}
+
+			$("#load").css("z-index", "-2");
+		});
+
+		function addClickHandler(content, marker, opts) {
+			marker.addEventListener("click", function(e) {
+				openInfo(content, e, opts)
+			});
+		}
+
+		function openInfo(content, e, opts) {
+			var p = e.target;
+			var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+			var infoWindow = new BMap.InfoWindow(content, opts);
+			map.openInfoWindow(infoWindow, point);
+		}
+	</script>
+
+</html>

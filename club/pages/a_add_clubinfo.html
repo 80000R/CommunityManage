@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>添加社团信息</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>添加社团信息</h2>
+   <form action="a_action_addclubinfo.php" method="post"> 
+    <div class="form-group">
+      <label for="No">社团编号:</label>
+      <input type="No" class="form-control" name="No" required="required" placeholder="输入社团编号">
+    </div>
+    <div class="form-group">
+      <label for="clubName">社团名称:</label>
+      <input type="clubName" class="form-control" name="clubName" required="required" placeholder="输入社团名称">
+    </div>
+	<div class="form-group">
+      <label for="clubType">社团类别:</label>
+      <input type="clubType" class="form-control" name="clubType" required="required" placeholder="输入社团类别">
+    </div>
+	<div class="form-group">
+      <label for="establishDate">成立日期:</label>
+      <input type="establishDate" class="form-control" name="establishDate" required="required" placeholder="输入成立时间">
+    </div>
+	<div class="form-group">
+      <label for="principal">社团负责人:</label>
+      <input type="principal" class="form-control" name="principal" required="required" placeholder="输入社团负责人">
+    </div>
+	<div class="form-group">
+      <label for="contact">负责人联系方式:</label>
+      <input type="contact" class="form-control" name="contact" required="required" placeholder="输入负责人联系方式">
+    </div>
+	<div class="form-group">
+      <label for="deparment">社团部门:</label>
+      <input type="deparment" class="form-control" name="deparment" required="required" placeholder="输入社团部门">
+    </div>
+	<div class="form-group">
+      <label for="introduction">社团简介:</label>
+      <input type="introduction" class="form-control" name="introduction" required="required" placeholder="输入社团负责人">
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
+

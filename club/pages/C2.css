@@ -1,0 +1,178 @@
+@CHARSET "UTF-8";
+body
+{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background:url(https://i.loli.net/2020/05/10/mZ1Nb68aUkgouXY.jpg);
+
+
+    background-size:100% 100%;
+	background-attachment:fixed;
+    background-repeat: no-repeat
+
+}
+
+
+.box
+{
+    position:absolute;
+    top:15%;
+    left:35%;
+    transform:tranlate(-50%,-50%);
+    width:1200px;
+    padding:40px;
+    background:rgba(0,0,0,.1);
+    box-sizing:border-box;
+    box-shadow:0 15px 25px rgba(0,0,0,.5);
+    border-radius:10px;
+}
+.box1
+{
+    position:absolute;
+    top:0%;
+    left:0%;
+    transform:tranlate(-50%,-50%);
+    width:1200px;
+    padding:40px;
+    background:rgba(0,0,0,.1);
+    box-sizing:border-box;
+    box-shadow:0 15px 25px rgba(0,0,0,.5);
+    border-radius:10px;
+}
+.box1 h2
+{
+    margin:0 0 5px;
+    padding:0;
+    color:#fff;
+    text-align:left;
+}
+
+.box2
+{
+    position:absolute;
+    top:25%;
+    left:0%;
+    transform:tranlate(-50%,-50%);
+    width:1200px;
+    padding:40px;
+    background:rgba(0,0,0,.1);
+    box-sizing:border-box;
+    box-shadow:0 15px 25px rgba(0,0,0,.5);
+    border-radius:10px;
+}
+
+.box2 h2
+{
+    margin:0 0 5px;
+    padding:0;
+    color:#fff;
+    text-align:center;
+}
+
+.box3
+{
+    position:absolute;
+    top:33%;
+    left:0%;
+    transform:tranlate(-50%,-50%);
+    width:1200px;
+    padding:40px;
+    background:rgba(61,89,171,.5);
+    box-sizing:border-box;
+    box-shadow:0 15px 25px rgba(0,0,0,.5);
+    border-radius:10px;
+}
+.box h3
+{
+    margin:0 0 30px;
+    padding:0;
+    color:#C3B0D6;
+    text-align:center;
+}
+
+.box h4
+{
+    margin:0 0 30px;
+    padding:0;
+    color:#C3B0D6;
+    text-align:center;
+}
+
+.box .inputButton
+{
+
+    width:100%;
+    padding:10px 0;
+    font-size:15px;
+    color:#fff;
+    letter-spacing:3px;
+    margin-bottom:30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline:none;
+    background:transparent;
+}
+
+.box .inputBox
+{
+    position:relative;
+}
+.box .inputBOx input
+{
+    width:100%;
+    padding:10px 0;
+    font-size:15px;
+    color:#fff;
+    letter-spacing:3px;
+    margin-bottom:30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline:none;
+    background:transparent;
+}
+
+
+.box .inputBox label
+{
+    position:absolute;
+    top:0;
+    left:0;
+    letter-spacing:1px;
+    padding:10px 0;
+    font-size:16px;
+    color:#fff;
+    pointer-events:none;
+    transition:.5s;
+}
+.box .inputBox input:focus~label,
+.box .inputBox input:valid~label
+{
+    top:-18px;
+    left:0;
+    color:#f46d90;
+    font-size:12px;
+}
+
+.box .container1 input
+{
+    position:absolute;
+	left:25px;
+	top:380px;
+	background:transparent;
+    border:none;
+    color:#fff;
+    background:#293844;
+    padding:10px 45px;
+	text-align: center;
+	text-decoration:none;
+	display: inline-block;
+    cursor:pointer;
+    border-radius:5px;
+	font-size:16px;
+    margin:10px;
+
+}
+
+
+

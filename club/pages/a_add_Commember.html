@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>添加社团人员信息</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>添加社团人员信息</h2>
+   <form action="a_action_addCommember.php" method="post"> 
+   <div class="form-group">
+      <label for="comNumber">社团编号:</label>
+      <input type="comNumber" class="form-control" name="comNumber" required="required" placeholder="输入社团编号">
+    </div>
+	<div class="form-group">
+      <label for="comName">社团名称:</label>
+      <input type="comName" class="form-control" name="comName" required="required" placeholder="输入社团名称">
+    </div>
+	<div class="form-group">
+      <label for="depName">部门名称:</label>
+      <input type="depName" class="form-control" name="depName" required="required" placeholder="输入部门名称">
+    </div>
+    <div class="form-group">
+      <label for="stuid">社员学号:</label>
+      <input type="stuid" class="form-control" name="stuid" required="required" placeholder="输入学生学号">
+    </div>
+    <div class="form-group">
+      <label for="sname">社员姓名:</label>
+      <input type="sname" class="form-control" name="sname" required="required" placeholder="输入学生姓名">
+    </div>
+	<div class="form-group">
+      <label for="memPosition">身份:</label>
+      <input type="memPosition" class="form-control" name="memPosition" required="required" placeholder="输入身份">
+    </div>
+	<div class="form-group">
+      <label for="memPower">管理员权限:</label>
+      <input type="memPower" class="form-control" name="memPower" required="required" placeholder="输入管理员权限">
+    </div>
+	<div class="form-group">
+      <label for="memScore">信用积分：</label>
+      <input type="memScore" class="form-control" name="memScore" required="required" placeholder="输入信用积分">
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
+
